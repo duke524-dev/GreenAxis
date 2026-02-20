@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const serviceLinks = [
   "Web Development",
@@ -17,11 +18,14 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <Link
-              href="/"
-              className="text-xl font-semibold text-gray-900 dark:text-gray-100"
-            >
-              GreenAxis
+            <Link href="/" className="inline-block" aria-label="GreenAxis home">
+              <Image
+                src="/img/logo_1.svg"
+                alt="GreenAxis"
+                height={56}
+                width={186}
+                className="h-14 w-auto object-contain"
+              />
             </Link>
             <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 max-w-sm">
               Building innovative software solutions that grow with your

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center px-6 pt-24 pb-16 overflow-hidden">
+    <section className="relative min-h-[90vh] flex flex-col justify-center px-6 pt-28 md:pt-32 pb-16 overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,var(--greenaxis-bg)_0%,transparent_50%),linear-gradient(90deg,transparent_60%,rgba(34,197,94,0.03)_100%)]" />
       <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent" />
       <div className="relative mx-auto max-w-4xl text-center">
