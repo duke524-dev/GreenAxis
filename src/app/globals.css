@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --greenaxis-foreground: #052e16;
+  --greenaxis-muted: #166534;
+  --greenaxis-accent: #16a34a;
+  --greenaxis-bg: #fafafa;
+  --greenaxis-card: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --greenaxis-foreground: #dcfce7;
+    --greenaxis-muted: #86efac;
+    --greenaxis-accent: #4ade80;
+    --greenaxis-bg: #0a0f0d;
+    --greenaxis-card: #111a14;
+  }
+}
+
+body {
+  color: var(--greenaxis-foreground);
+  background: var(--greenaxis-bg);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
