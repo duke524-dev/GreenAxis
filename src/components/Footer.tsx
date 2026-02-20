@@ -1,42 +1,92 @@
 import Link from "next/link";
 
+const serviceLinks = [
+  "Web Development",
+  "Mobile Apps",
+  "UI/UX Design",
+  "Backend Systems",
+  "DevOps & Hosting",
+  "Dedicated Team",
+];
+
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-greenaxis-200/50 dark:border-greenaxis-800/50 bg-[var(--greenaxis-card)]">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
-          <Link
-            href="/"
-            className="text-lg font-semibold text-greenaxis-800 dark:text-greenaxis-200"
-          >
-            GreenAxis
-          </Link>
-          <nav className="flex flex-wrap gap-6 text-sm">
+    <footer className="border-t border-gray-200 dark:border-gray-800 bg-[var(--greenaxis-card)]">
+      <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="grid gap-12 lg:grid-cols-4">
+          <div className="lg:col-span-2">
             <Link
-              href="#services"
-              className="text-greenaxis-600 dark:text-greenaxis-400 hover:text-greenaxis-700 dark:hover:text-greenaxis-300"
+              href="/"
+              className="text-xl font-semibold text-gray-900 dark:text-gray-100"
             >
+              GreenAxis
+            </Link>
+            <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 max-w-sm">
+              Building innovative software solutions that grow with your
+              business. From web development to mobile apps, we bring your ideas
+              to life.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100">
               Services
-            </Link>
-            <Link
-              href="#about"
-              className="text-greenaxis-600 dark:text-greenaxis-400 hover:text-greenaxis-700 dark:hover:text-greenaxis-300"
-            >
-              About
-            </Link>
+            </h3>
+            <ul className="mt-4 space-y-2">
+              {serviceLinks.map((label) => (
+                <li key={label}>
+                  <Link
+                    href="#services"
+                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100">
+              Contact
+            </h3>
+            <ul className="mt-4 space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <li>
+                <span className="font-medium text-gray-700 dark:text-gray-300">
+                  Email
+                </span>
+                <br />
+                hello@greenaxis.com
+              </li>
+              <li className="pt-2">
+                <span className="font-medium text-gray-700 dark:text-gray-300">
+                  Opening hours
+                </span>
+                <br />
+                9am–6pm Mon–Fri
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="mt-12 flex flex-col gap-4 border-t border-gray-200 dark:border-gray-800 pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            © {year} GreenAxis. All rights reserved.
+          </p>
+          <nav className="flex gap-6 text-sm">
             <Link
               href="#contact"
-              className="text-greenaxis-600 dark:text-greenaxis-400 hover:text-greenaxis-700 dark:hover:text-greenaxis-300"
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
             >
               Contact
             </Link>
+            <Link
+              href="#"
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+            >
+              Privacy policy
+            </Link>
           </nav>
         </div>
-        <p className="mt-8 text-sm text-greenaxis-600 dark:text-greenaxis-400">
-          © {year} GreenAxis. All rights reserved.
-        </p>
       </div>
     </footer>
   );
